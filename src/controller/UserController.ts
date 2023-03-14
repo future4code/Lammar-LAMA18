@@ -42,8 +42,6 @@ export class UserController {
         } catch (error: any) {
             res.status(400).send({ error: error.message });
         }
-
         await BaseDatabase.destroyConnection();
     }
-
 }
