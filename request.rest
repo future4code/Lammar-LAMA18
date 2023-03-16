@@ -17,3 +17,28 @@ Content-Type: application/json
     "email": "teste2@gmail.com",
     "password": "teste"
 }
+
+### create banda
+POST http://localhost:3000/band/create
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjkwNTAzMGEwLTY2ZGUtNDFiYy1iZWUyLTJiZTllMTFlNjUxYSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY3OTAwMDgwNywiZXhwIjoxNjc5MDAyNjA3fQ.k71Qb-mXOMUx2P2-vD8gICpKCEwsdWgB9AGfnUdlqbU
+
+{
+    "name": "banda 2",
+    "music_genre": "rock",
+    "responsible": "responsavel 2"
+}
+
+### get banda by id
+GET http://localhost:3000/band/bands/e9e1330f-d530-4cc2-9fb5-e5703c19d667
+
+### register show
+POST http://localhost:3000/show/register
+Content-Type: application/json
+
+{
+    "weekDay": "SATURDAY",
+    "startTime": 10,
+    "endTime": 12,
+    "bandId": "e9e1330f-d530-4cc2-9fb5-e5703c19d667"
+}
