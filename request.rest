@@ -3,10 +3,10 @@ POST http://localhost:3000/user/signup
 Content-Type: application/json
 
 {
-    "email": "teste2@gmail.com",
+    "email": "teste4@gmail.com",
     "name": "teste",
     "password": "teste",
-    "role": "ADMIN"
+    "role": "admin"
 }
 
 ### login
@@ -18,7 +18,7 @@ Content-Type: application/json
     "password": "teste"
 }
 
-### create banda
+### register banda
 POST http://localhost:3000/band/create
 Content-Type: application/json
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjkwNTAzMGEwLTY2ZGUtNDFiYy1iZWUyLTJiZTllMTFlNjUxYSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY3OTAwMDgwNywiZXhwIjoxNjc5MDAyNjA3fQ.k71Qb-mXOMUx2P2-vD8gICpKCEwsdWgB9AGfnUdlqbU
@@ -38,7 +38,10 @@ Content-Type: application/json
 
 {
     "weekDay": "SATURDAY",
-    "startTime": 10,
-    "endTime": 12,
+    "startTime": 8,
+    "endTime": 10,
     "bandId": "e9e1330f-d530-4cc2-9fb5-e5703c19d667"
 }
+
+### get shows by day
+GET http://localhost:3000/show/shows?weekDay=SATURDAY

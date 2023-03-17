@@ -4,6 +4,7 @@ import { ShowController } from "../controller/ShowController";
 
 export const showRouter = express.Router();
 
-const bandController = new ShowController();
+const showController = new ShowController();
 
-showRouter.post("/register", bandController.registerShow);
+showRouter.post("/register", showController.registerShow);
+showRouter.get("/shows", showController.getShows);

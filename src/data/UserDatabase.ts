@@ -19,7 +19,7 @@ export class UserDatabase extends BaseDatabase {
           email,
           name,
           password,
-          role
+          role,
         })
         .into(UserDatabase.TABLE_NAME);
     } catch (error: any) {

@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { RegisterShowDTO} from "../model/Show";
-import { ShowDatabase } from "../data/ShowDatabase";
+import { ShowBusiness } from "../business/ShowBusiness";
 
 export class ShowController {
     
@@ -15,9 +15,9 @@ export class ShowController {
                 token: req.headers.authorization as string
             }
 
-            const showDatabase = new ShowDatabase();
+            const showBusiness = new ShowBusiness();
 
-            await showDatabase.registerShow(input);
+            await showBusiness.registerShow(input);
 
             res.status(200).send({ message: "Show criado com sucesso" });
 
@@ -25,5 +25,21 @@ export class ShowController {
             res.status(400).send({ error: error.message });
         }
 
+    }
+
+    async getShows(req: Request, res: Response) {
+        try {
+
+            const weekDay = req.query.weekDay as string;
+
+            const showBusiness = new ShowBusiness();
+
+            const shows = await showBusiness.getShows(weekDay);
+
+            res.status(200).send({ shows });
+
+        } catch (error: any) {
+            res.status(400).send({ error: error.message });
+        }
     }
 }
