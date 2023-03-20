@@ -38,8 +38,6 @@ export class ShowBusiness {
 
         const shows = await showDatabase.getShows(weekDay);
 
-        console.log(shows)
-
         return shows;
 
     }
