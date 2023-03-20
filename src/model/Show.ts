@@ -12,6 +12,14 @@ export type Show = {
     bandId: string
 }
 
+const seila: Show = {
+    id: 'id',
+    weekDay: DAY_TYPES.SEXTA,
+    startTime: 8,
+    endTime: 10,
+    bandId: 'id'
+}
+
 export class ShowParams {
     constructor(
     private id: string,
